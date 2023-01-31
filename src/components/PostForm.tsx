@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useAppDispatch } from "../app/hooks";
 import { Post } from "../interface/Post";
-import { savePost } from "../slice/post.slice";
+import { savePost } from "../slice/post.actions";
 
 function PostForm() {
   const dispatch = useAppDispatch();
@@ -33,7 +33,7 @@ function PostForm() {
 
   return (
     <div>
-      <div className="container mt-5">
+      <div className="container mt-3">
         <div className="mb-3">
           <label className="form-label">User Id</label>
           <input

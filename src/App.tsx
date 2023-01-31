@@ -3,7 +3,8 @@ import PostsList from "./components/PostsList";
 
 function App() {
   return (
-    <div>
+    <div className="container">
+      <h1>Demo with Redux Toolkit</h1>
       <PostForm />
       <PostsList />
     </div>
