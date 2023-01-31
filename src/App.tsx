@@ -1,9 +1,11 @@
+import PostForm from "./components/PostForm";
 import PostsList from "./components/PostsList";
 
 function App() {
   return (
     <div>
-      <PostsList/>
+      <PostForm />
+      <PostsList />
     </div>
   );
 }

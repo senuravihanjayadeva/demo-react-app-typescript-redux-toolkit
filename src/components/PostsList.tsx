@@ -5,7 +5,7 @@ import type { RootState } from "../app/store";
 
 function PostsList() {
 
-  const posts = useAppSelector((state: RootState) => state.post);
+  const posts = useAppSelector((state: RootState) => state.post.posts);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -15,7 +15,7 @@ function PostsList() {
   return (
     <>
       <div>Posts List</div>
-      {posts.posts.map((post) => {
+      {posts.map((post) => {
         return (
           <div key={post.id} className="card m-3">
             <div className="card-body">

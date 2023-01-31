@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { POSTAPI } from "../api/postAPI";
+import { Post } from "../interface/Post";
 
 export const fetchAllPosts = createAsyncThunk(
   "posts/fetchAllPosts",
@@ -9,12 +10,13 @@ export const fetchAllPosts = createAsyncThunk(
   }
 );
 
-interface Post {
-  userId: number;
-  id: number;
-  title: string;
-  body: string;
-}
+export const savePost = createAsyncThunk(
+  "posts/savePost",
+  async (newPost : Post) => {
+    const response = await POSTAPI.savePost(newPost);
+    return response.data;
+  }
+);
 
 export interface PostState {
   posts: Post[];
@@ -37,6 +39,14 @@ export const postSlice = createSlice({
       (state, action: PayloadAction<Post[]>) => {
         // Add user to the state array
         state.posts = action.payload;
+        state.status = "success";
+      }
+    );
+    builder.addCase(
+      savePost.fulfilled,
+      (state, action) => {
+        // Add user to the state array
+        state.posts = [...state.posts, action.payload];
         state.status = "success";
       }
     );
