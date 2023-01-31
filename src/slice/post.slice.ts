@@ -32,11 +32,14 @@ export const postSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     // Add reducers for additional action types here, and handle loading state as needed
-    builder.addCase(fetchAllPosts.fulfilled, (state, action) => {
-      // Add user to the state array
-      state.posts = action.payload;
-      state.status = "success";
-    });
+    builder.addCase(
+      fetchAllPosts.fulfilled,
+      (state, action: PayloadAction<Post[]>) => {
+        // Add user to the state array
+        state.posts = action.payload;
+        state.status = "success";
+      }
+    );
   },
 });
 
