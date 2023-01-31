@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useAppDispatch } from "../app/hooks";
 import { Post } from "../interface/Post";
-import { savePost } from "../slice/post.actions";
+import { savePost } from "../app/actions/post.action";
 
 function PostForm() {
   const dispatch = useAppDispatch();

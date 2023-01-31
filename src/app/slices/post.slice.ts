@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { Post } from "../interface/Post";
-import { fetchAllPosts, savePost, deletePost, updatePost} from './post.actions';
+import { Post } from "../../interface/Post";
+import { fetchAllPosts, savePost, deletePost, updatePost} from '../actions/post.action';
 
 export interface PostState {
   posts: Post[];

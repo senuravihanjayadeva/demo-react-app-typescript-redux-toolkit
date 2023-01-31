@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useAppSelector, useAppDispatch } from "../app/hooks";
-import { deletePost, fetchAllPosts } from "../slice/post.actions";
-import { selectPost } from "../slice/post.slice";
+import { deletePost, fetchAllPosts } from "../app/actions/post.action";
+import { selectPost } from "../app/slices/post.slice";
 import type { RootState } from "../app/store";
 import EditPostForm from "./EditPostForm";
 

@@ -2,7 +2,7 @@ import { useState,useEffect } from "react";
 import type { RootState } from "../app/store";
 import { useAppSelector, useAppDispatch } from "../app/hooks";
 import { Post } from "../interface/Post";
-import { updatePost } from "../slice/post.actions";
+import { updatePost } from "../app/actions/post.action";
 
 function EditPostForm() {
   const post = useAppSelector((state: RootState) => state.post.post);
