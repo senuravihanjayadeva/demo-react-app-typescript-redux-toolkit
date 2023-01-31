@@ -4,3 +4,8 @@ export interface Post {
   title: string;
   body: string;
 }
+
+export interface PostForUpadate {
+  id: number;
+  updatedPost: Post;
+}
